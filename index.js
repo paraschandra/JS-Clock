@@ -1,5 +1,5 @@
-const text=document.getElementById("text");
-const author=document.getElementById("author");
+let text=document.getElementById("text");
+let author=document.getElementById("author");
 
 const getNewQuote = async () =>
 {

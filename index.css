@@ -26,7 +26,6 @@
     padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     overflow: hidden;
     justify-content: space-between;
 }
