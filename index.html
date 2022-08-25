@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="top">
+                <div class="quote">
+                    <p class="text" id="text"></p><br>
+                    <p class="author" id="author"></p>
+                </div>
+                <div class="refresh">
+                    <img src="./assets/refresh.svg" alt="refresh-button" class="btn" onclick="getNewQuote()">
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="clock">
+                    <div class="greeting">
+                        <img src="./assets/sun.svg" alt="sun" id="icon">
+                        <p id="greeting" onload="currentTime()"></p>
+                    </div>
+
+                    <div class="time-box">
+                        <p id="time" onload="currentTime()"></p>
+                        <p id="session" onload="currentTime()"></p>
+                    </div>
+                </div>
+
+                <div class="music">
+                    <audio src="./assets/relaxing music.mp3" id="myAudio" preload="auto" loop></audio>
+                    <div class="music-btn" onclick="togglePlay()">
+                        <p class="label">Music</p><span class="play"><img src="./assets/play.svg" alt="play" id="play-pause"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
