@@ -52,11 +52,11 @@ const currentTime = () =>
     }
     if (hh>4 && hh<=6 && session == 'PM'){
         greeting = "GOOD EVENING,";
-        document.getElementById("icon").src = "../assets/moon.svg";
+        document.getElementById("icon").src = "./assets/moon.svg";
     }
     if (hh>6 && hh<12 && session == 'PM'){
         greeting = "GOOD NIGHT,";
-        document.getElementById("icon").src = "../assets/moon.svg";
+        document.getElementById("icon").src = "./assets/moon.svg";
     }
 
     hh = (hh < 10) ? "0" + hh : hh;
@@ -79,10 +79,10 @@ function togglePlay(){
 
 myAudio.onplaying = function() {
     isPlaying = true;
-    document.getElementById("play-pause").src = "../assets/pause.svg";
+    document.getElementById("play-pause").src = "./assets/pause.svg";
 };
 
 myAudio.onpause = function() {
     isPlaying = false;
-    document.getElementById("play-pause").src = "../assets/play.svg";
+    document.getElementById("play-pause").src = "./assets/play.svg";
 };
