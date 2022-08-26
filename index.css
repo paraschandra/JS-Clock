@@ -14,16 +14,14 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-content: space-between;
 }
 
 .container{
-    max-height: 100vh;
     height: 100vh;
     max-width: 100%;
     background: rgba(0, 0, 0, 0.25);
     padding: 4rem 12rem;
-    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -149,4 +147,44 @@
 .play{
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        justify-content: space-evenly;
+        padding: 2rem;
+        max-height: max-content;
+    }
+
+    .quote{
+        width: max-content;
+    }
+
+    .refresh{
+        margin-left: 0;
+    }
+
+    .bottom, .greeting, .time-box{
+        width: 100%;
+    }
+
+    .clock{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #time{
+        font-size: 7em;
+        margin-right: .5rem;
+    }
+
+    #greeting{
+        font-size: 1em;
+    }
+
+    #session{
+        font-size: 4em;
+    }
 }
