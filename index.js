@@ -3,23 +3,24 @@ let author=document.getElementById("author");
 
 const getNewQuote = async () =>
 {
-    var url="https://favqs.com/api/qotd";
+    var url="https://go-quote.azurewebsites.net/random-quote?format=json";
 
-    fetch('https://favqs.com/api/qotd')
-        .then(response => response.json())
-        .then(data => {
-            console.log(`${data.quote.body} —${data.quote.author}`);
-            const quote = data.quote.body;
+    const response=await fetch(url);
+    console.log(typeof response);
 
-            const auth = data.quote.auhtor;
+    const data = await response.json();
 
-            if(auth==null){
-                author = "Anonymous";
-            }
-        
-            text.innerHTML ="\""+ quote +"\"";
-            author.innerHTML = auth;
-        });
+    const quote = data.text;
+
+    const auth = data.author;
+
+    if(auth==null){
+        author = "Anonymous";
+    }
+
+    text.innerHTML ="\""+ quote +"\"";
+    author.innerHTML = auth;
+
 }
 getNewQuote();
 
