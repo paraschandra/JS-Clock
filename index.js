@@ -3,18 +3,16 @@ let author=document.getElementById("author");
 
 const getNewQuote = async () =>
 {
-    var url="https://type.fit/api/quotes";
+    var url="https://favqs.com/api/qotd";
 
     const response=await fetch(url);
     console.log(typeof response);
 
-    const allQuotes = await response.json();
+    const data = await response.json();
 
-    const idx = Math.floor(Math.random()*allQuotes.length);
+    const quote = data['quote']['body'];
 
-    const quote = allQuotes[idx].text;
-
-    const auth = allQuotes[idx].author;
+    const auth = data['quote']['author'];
 
     if(auth==null){
         author = "Anonymous";
