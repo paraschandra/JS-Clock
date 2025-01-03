@@ -5,22 +5,21 @@ const getNewQuote = async () =>
 {
     var url="https://favqs.com/api/qotd";
 
-    const response=await fetch(url);
-    console.log(typeof response);
+    fetch('https://favqs.com/api/qotd')
+        .then(response => response.json())
+        .then(data => {
+            console.log(`${data.quote.body} —${data.quote.author}`);
+            const quote = data.quote.body;
 
-    const data = await response.json();
+            const auth = data.quote.auhtor;
 
-    const quote = data['quote']['body'];
-
-    const auth = data['quote']['author'];
-
-    if(auth==null){
-        author = "Anonymous";
-    }
-
-    text.innerHTML ="\""+ quote +"\"";
-    author.innerHTML = auth;
-
+            if(auth==null){
+                author = "Anonymous";
+            }
+        
+            text.innerHTML ="\""+ quote +"\"";
+            author.innerHTML = auth;
+        });
 }
 getNewQuote();
 
